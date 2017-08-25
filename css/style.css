@@ -1,0 +1,24 @@
+h2 {
+  margin-top: 10px;
+}
+
+#gameBoard {
+  border: 1px solid gray;
+}
+
+.card {
+  /*box-sizing: content-box;*/
+  /*width: 100%;*/
+  border: 1px solid lightgray;
+  /*margin: 5px;*/
+  min-height: 100px;
+
+}
+
+.card:hover {
+  background-color: lightgray;
+}
+
+#status {
+  margin-bottom: 10px;
+}

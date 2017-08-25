@@ -1,0 +1,19 @@
+Things left to do:
+  
+  - Create status line to let users know whose turn, correct/incorrect etc
+
+  - Logic
+    - end game
+    - button to reset game
+
+  - error handling
+    - during timeout after incorrect answer lock other tiles
+    - lock correct tiles so they can not be clicked again
+  
+  - rename some variables to avoid confusion
+  
+  - check for repeat code
+  
+  - Make it pretty!
+    - Possibly change background color to player turn? (Blue's turn = blue background)
+    - Add image to back of cards
