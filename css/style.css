@@ -6,13 +6,38 @@ h2 {
   border: 1px solid gray;
 }
 
-.card {
-  /*box-sizing: content-box;*/
-  /*width: 100%;*/
+/*.card {
   border: 1px solid lightgray;
-  /*margin: 5px;*/
   min-height: 100px;
+}*/
 
+#card0,
+#card1,
+#card2,
+#card3,
+#card4,
+#card5,
+#card6,
+#card7,
+#card8,
+#card9,
+#card10,
+#card11,
+#card12,
+#card13,
+#card14,
+#card15
+ {
+  border: 1px solid lightgray;
+  min-height: 100px;
+}
+
+.red {
+  background-color: #FF6666;
+}
+
+.blue {
+  background-color: #4C4CFF;
 }
 
 .card:hover {
@@ -21,4 +46,8 @@ h2 {
 
 #status {
   margin-bottom: 10px;
+}
+
+.cardLocked {
+  
 }
