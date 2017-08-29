@@ -1,9 +1,6 @@
 Things left to do:
   
-  - Create status line to let users know whose turn, correct/incorrect etc
-
   - Logic
-    - end game
     - button to reset game
 
   - error handling
