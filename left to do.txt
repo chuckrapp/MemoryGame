@@ -1,16 +1,14 @@
 Things left to do:
   
-  - Logic
-    - button to reset game
 
-  - error handling
-    - during timeout after incorrect answer lock other tiles
-    - lock correct tiles so they can not be clicked again
+  - button to reset game
+  - double check order of functions (combine??)
   
   - rename some variables to avoid confusion
   
   - check for repeat code
   
   - Make it pretty!
-    - Possibly change background color to player turn? (Blue's turn = blue background)
+    - Possibly change background color or border to player turn? (Blue's turn = blue background)
     - Add image to back of cards
+    - Add more status'
