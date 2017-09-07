@@ -4,6 +4,9 @@ h2 {
 
 #gameBoard {
   border: 1px solid gray;
+  box-sizing: content-box;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /*.card {
@@ -30,6 +33,7 @@ h2 {
  {
   border: 1px solid lightgray;
   min-height: 100px;
+  padding: 0;
 }
 
 .red {
@@ -40,7 +44,7 @@ h2 {
   background-color: #4C4CFF;
 }
 
-.card:hover {
+.card-active:hover {
   background-color: lightgray;
 }
 
@@ -48,6 +52,3 @@ h2 {
   margin-bottom: 10px;
 }
 
-.cardLocked {
-  
-}
