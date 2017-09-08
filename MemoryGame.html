@@ -1,146 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Memory Game!</title>
   <meta charset="utf-8">
-  <meta name="viewport"
-     content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
+
 <body>
-  
   <div class="container">
     <div class="row text-center">
       <div class="col-md-12">
         <h1 class="display-1">Memory Game!</h1>
       </div>
     </div>
-
-<!-- Header - title/players/score -->
+    <!-- Header - title/players/score -->
     <div class="row text-center">
-      <div class="col-md-4 col-md-offset-2">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>RED</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h2><span id="redScore">0</span></h2>
-          </div>
-        </div>
+      <div class="col-xs-4 col-md-4 col-xs-offset-2 col-md-offset-2">
+        <!-- <div class="row"> -->
+        <!-- <div class="col-xs-12 col-md-12"> -->
+        <h2>RED: <span id="redScore">0</span></h2>
+        <!-- </div> -->
+        <!-- </div> -->
       </div>
-
-      <div class="col-md-4">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Blue</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h2><span id="blueScore">0</span></h2>
-          </div>
-        </div>
+      <div class="col-xs-4 col-md-4">
+        <!-- <div class="row"> -->
+        <!-- <div class="col-xs-12 col-md-12"> -->
+        <h2>BLUE: <span id="blueScore">0</span></h2>
+        <!-- </div> -->
+        <!-- </div> -->
       </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <h2><span id="status">Red will start us off!</span></h2>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h2><span id="status">Red will start us off!</span></h2>
+      </div>
+    </div>
+  </div>
+  <!-- Game Board area -->
+  <div id="gameBoard" class="row">
+    <!-- top row of cards -->
+    <div class="row cardRow text-center">
+      <div class="col-md-12">
+        <div class="row">
+          <div id="card0" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card1" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card2" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card3" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
         </div>
       </div>
     </div>
-
-<!-- Game Board area -->
-    <div id="gameBoard" class="row">
-    <!-- top row of cards -->
-      <div class="row cardRow text-center">
-        <div class="col-md-12">
-          <div class="row">
-            <div id="card0" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card1" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card2" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card3" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
+    <!-- second row of cards -->
+    <div class="row cardRow text-center">
+      <div class="col-md-12">
+        <div class="row">
+          <div id="card4" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card5" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card6" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card7" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
           </div>
         </div>
       </div>
-
-      <!-- second row of cards -->
-      <div class="row cardRow text-center">
-        <div class="col-md-12">
-          <div class="row">
-            <div id="card4" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card5" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card6" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card7" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
+    </div>
+    <!-- third row of cards -->
+    <div class="row cardRow text-center">
+      <div class="col-md-12">
+        <div class="row">
+          <div id="card8" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card9" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card10" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card11" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
           </div>
         </div>
       </div>
-
-      <!-- third row of cards -->
-      <div class="row cardRow text-center">
-        <div class="col-md-12">
-          <div class="row">
-            <div id="card8" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card9" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card10" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card11" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
+    </div>
+    <!-- bottom row of cards -->
+    <div class="row cardRow text-center">
+      <div class="col-md-12">
+        <div class="row">
+          <div id="card12" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
           </div>
-        </div>
-      </div>
-
-      <!-- bottom row of cards -->
-      <div class="row cardRow text-center">
-        <div class="col-md-12">
-          <div class="row">
-            <div id="card12" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card13" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card14" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
-            <div id="card15" class="col-md-3 card card-active">
-              <h2></h2>
-            </div>
+          <div id="card13" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card14" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
+          </div>
+          <div id="card15" class="col-xs-3 col-md-3 card card-active">
+            <h2></h2>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+  </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./javascript/logic.js"></script>
-
 </body>
+
 </html>

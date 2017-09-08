@@ -3,7 +3,7 @@ var correctRed = 0;
 var correctBlue = 0;
 var flipped = 0; //counts how many cards are currently flipped over
 var turn = 1; //turn 1 = RED, turn 2 = BLUE
-var scoreRed = 0; 
+var scoreRed = 0;
 var scoreBlue = 0;
 var card1Val; //value of the first card flipped
 var card2Val; //value of the second card flipped
@@ -23,14 +23,15 @@ var startGame = function() {
 
 
   for (var i = 0; i < arrOptions.length; i++) {
-    $("#card"+[i]+"").data("value", arrOptions[i]);
-    $("#card"+[i]+"").children('h2').text("");
+    $("#card" + [i] + "").data("value", arrOptions[i]);
+    $("#card" + [i] + "").children('h2').text("");
   }
 
-  if (!$(".card").hasClass("card-active")){
+  if (!$(".card").hasClass("card-active")) {
     $(".card").addClass('card-active');
     $(".card").removeClass('red blue');
   }
+  enableCards();
 }
 
 //reveal value of card when a it is clicked
@@ -38,24 +39,24 @@ var startGame = function() {
 var enableCards = function() {
   console.log('ENABLING all cards')
   $(".card-active").on("click", function() {
-  if (flipped == 0) {
-    card1Val = $(this).data('value');
-    card1Id = this.id;
-    lockCard(card1Id);
-    $(this).children('h2').text($(this).data('value'));
-    flipped++;
-  }  else if (flipped == 1) {
-    disableCards();
+    if (flipped == 0) {
+      card1Val = $(this).data('value');
+      card1Id = this.id;
+      lockCard(card1Id);
+      $(this).children('h2').text($(this).data('value'));
+      flipped++;
+    } else if (flipped == 1) {
+      disableCards();
 
-    card2Val = $(this).data('value');
-    card2Id = this.id;
-    lockCard(card2Id);
+      card2Val = $(this).data('value');
+      card2Id = this.id;
+      lockCard(card2Id);
 
-    $(this).children('h2').text($(this).data('value'));
-    checkMatch();
-    flipped = 0;
-  }
-});
+      $(this).children('h2').text($(this).data('value'));
+      checkMatch();
+      flipped = 0;
+    }
+  });
 }
 
 //flip both cards back over
@@ -72,7 +73,7 @@ var flipBack = function() {
 //   console.log("locking " + card2Id);
 //   $("#" + card1Id + "").removeClass('card-active');
 //   $("#" + card2Id + "").removeClass('card-active');
-  
+
 //   $("#" + card1Id + "").off('click');
 //   $("#" + card2Id + "").off('click');
 // }
@@ -96,36 +97,36 @@ var clearCards = function() {
 
 //Check for winner
 var checkWin = function() {
-  if (correctRed + correctBlue == (arrOptions.length/2)) {
+  if (correctRed + correctBlue == (arrOptions.length / 2)) {
     if (correctRed > correctBlue) {
       $("#status").text("Red Wins!!");
       scoreRed++;
       $("#redScore").text(scoreRed);
-    } else if ( correctRed < correctBlue) {
+    } else if (correctRed < correctBlue) {
       $("#status").text("Blue Wins!!");
       scoreBlue++;
       $("#blueScore").text(scoreBlue);
     } else {
       $("#status").text("Wow! Tie Game!!");
     }
-  setTimeout(startGame(),1500);
+    setTimeout(startGame, 1500);
   }
 }
 
 
 
-if(turn == 1) {
-      
-    } else {
-      
-    } 
+if (turn == 1) {
+
+} else {
+
+}
 
 //check cards for a match 
 //if correct player goes again, otherwise play passes
 var checkMatch = function() {
   console.log(card1Val);
   console.log(card2Val);
-  if(card1Val == card2Val) {
+  if (card1Val == card2Val) {
     $("#" + card1Id + "").removeClass('card-active');
     $("#" + card2Id + "").removeClass('card-active');
 
@@ -141,7 +142,7 @@ var checkMatch = function() {
       correctBlue++;
     }
     console.log("Correct! You go again!");
-    
+
     checkWin();
     enableCards();
   } else {
@@ -152,9 +153,10 @@ var checkMatch = function() {
     }
     console.log("No match! Next players turn");
     //keep cards flipped over for 1 second so players can see values
-      setTimeout(function(){ flipBack() } , 1500);
-      setTimeout(function(){ enableCards() } , 1500);
-    if(turn == 1) {
+    setTimeout(flipBack, 1500);
+    // enableCards();
+    setTimeout(enableCards, 1500);
+    if (turn == 1) {
       turn++;
     } else {
       turn = 1;
@@ -164,4 +166,4 @@ var checkMatch = function() {
 }
 
 startGame();
-enableCards();
+// enableCards();
